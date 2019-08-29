@@ -1,0 +1,71 @@
+﻿.modal {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 5px;
+    color: #333;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    max-width: 50%;
+    padding: 1rem 2rem;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .modal {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+body {
+    background-image: url('https://41.media.tumblr.com/efd15be8d41b12a7b0ef17fba27c3e20/tumblr_mqqy59HMaf1qzattso1_1280.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+h1 {
+    position: relative;
+    color: white;
+}
+
+.headline {
+    width: 100%;
+    font: 8vw system-ui, sans-serif;
+    font-weight: 900;
+    height: 150px;
+}
+
+@supports (backdrop-filter: blur(12px)) {
+    .visually-hidden {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    h1 {
+        backdrop-filter: blur(12px);
+        background: rgba(white, 0.2);
+        clip-path: url(#lockup-headline-mask-path);
+    }
+}
